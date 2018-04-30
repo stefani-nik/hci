@@ -476,7 +476,8 @@ input::-moz-focus-inner {
 }
 
 .header-search-close,
-.header-login-close {
+.header-login-close,
+.header-register-close {
     position: absolute;
     display: block;
     width: 45px;
@@ -492,7 +493,9 @@ input::-moz-focus-inner {
 .header-search-close::before,
 .header-search-close::after,
 .header-login-close::before,
-.header-login-close::after {
+.header-login-close::after,
+.header-register-close:before,
+.header-register-close:after {
     content: '';
     position: absolute;
     display: inline-block;
@@ -504,13 +507,15 @@ input::-moz-focus-inner {
 }
 
 .header-search-close::before,
-.header-login-close::before {
+.header-login-close::before,
+.header-register-close:before {
 
     transform: rotate(45deg);
 }
 
 .header-search-close::after,
-.header-login-close::after {
+.header-login-close::after,
+.header-register-close:after {
     transform: rotate(-45deg);
 }
 
@@ -831,7 +836,8 @@ input::-moz-focus-inner {
 }
 
 .header-search,
-.header-login {
+.header-login,
+.header-register {
     display: block;
     text-align: center;
     background: #151515;
@@ -848,7 +854,8 @@ input::-moz-focus-inner {
 }
 
 .header-search-form,
-.header-login-form {
+.header-login-form,
+.header-register-form {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -858,11 +865,12 @@ input::-moz-focus-inner {
 }
 
 .header-search-form label,
-.header-login-form label {
+.header-login-form label,
+.header-register-form label {
     color: #FFFFFF;
 }
 
-.header-search-form::after,{
+.header-search-form::after{
     content: "Press Enter to begin your search.";
     display: block;
     letter-spacing: 0.6px;
@@ -874,7 +882,9 @@ input::-moz-focus-inner {
 
 .header-search-form input[type="search"],
 .header-login-form input[type="text"],
-.header-login-form input[type="password"] {
+.header-login-form input[type="password"],
+.header-register-form input[type="text"],
+.header-register-form input[type="password"] {
     background-color: transparent;
     color: #000000;
     height: auto;
@@ -892,7 +902,9 @@ input::-moz-focus-inner {
 
 .header-search-form input[type="search"]:focus,
 .header-login-form input[type="text"]:focus,
-.header-login-form input[type="password"]:focus {
+.header-login-form input[type="password"]:focus,
+.header-register-form input[type="text"]:focus,
+.header-resgister-form input[type="password"]:focus {
     outline: none;
 }
 
@@ -900,24 +912,36 @@ input::-moz-focus-inner {
     background-image: url(../images/icons/icon-search.png);
     height: 21px;
     min-width: 21px;
-    position: absolute;
-    right: 58px;
+    position: relative;
+    float: left;
     top: 15px;
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
  }
 
- .header-login-btn{
-    background-image: url(../images/icons/icon-login.png);
+ .header-login-btn,
+ .header-register-btn{
+    color : white;
     height: 21px;
     min-width: 21px;
+    font-family: "metropolis-semibold", sans-serif;
+    font-size: 2.0rem;
     position: absolute;
     right: 20px;
     top: 15px;
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
+}
+
+.header-login-btn{
+    right: 13rem;
+}
+.header-login-btn:hover,
+.header-register-btn:hover{
+    color: white;
+    font-size: 2.1rem;
 }
 
 .header-account-btn{
@@ -959,7 +983,8 @@ body.login-is-visible {
 }
 
 .search-is-visible .header-search,
-.login-is-visible .header-login {
+.login-is-visible .header-login,
+.register-is-visible .header-register {
     opacity: 1;
     visibility: visible;
 }
@@ -990,7 +1015,8 @@ body.login-is-visible {
         display: block;
     }
     .header-search-btn,
-    .header-login-btn
+    .header-login-btn,
+    .header-register-btn
     {
         top: 9px;
         right: 28px;
@@ -1017,7 +1043,8 @@ body.login-is-visible {
         top: -3px;
     }
     .header-search-btn,
-    .header-login-btn
+    .header-login-btn,
+    .header-register-btn
      {
         top: 6px;
     }
@@ -1041,7 +1068,8 @@ body.login-is-visible {
         top: -7px;
     }
     .header-search-btn,
-    .header-login-btn
+    .header-login-btn,
+    .header-register-btn
     {
         top: 3px;
     }
@@ -1813,7 +1841,18 @@ body.login-is-visible {
 .content-extra .about {
     padding: 0 40px;
 }
+.user-books{
+    text-align: center;
+    text-decoration: underline;
+}
 
+.user-books-content{
+    display: flex;
+}
+
+.user-books-content div{
+    margin: 3.0rem;
+}
 .content-extra .about p {
     margin-bottom: 1.5rem;
 }
